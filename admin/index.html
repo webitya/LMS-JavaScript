@@ -17,7 +17,7 @@
     <title>Admin Panel</title>
 </head>
 <body>
-      <div class="side-nav shadow-sm">
+      <div class="side-nav">
            <div class="logo">
                 <img src="../assests/images/webityaweb.svg" width="150px">
                 <button class="btn togglerBtnNav"><i class="fa fa-rectangle-xmark" style="font-size:30px;color:#ff6f61;"></i></button>
@@ -34,12 +34,25 @@
       </div>
       <div class="page-content">
             <nav class="navbar bg-light shadow-sm">
-                  <button class="btn togglerBtn"><i class="fa fa-align-left"></i></button>
+                  <div class="container-fluid">
+                        <button class="btn togglerBtn"><i class="fa fa-align-left"></i></button>
+                        <div class="flex align-items-center justify-content-center gap-3">
+                              <button class="btn rounded-full bg-red-200 text-red-600"><i class="fa-regular fa-envelope"></i></button>
+
+                              <button class="btn rounded-full bg-green-200 text-green-600 position-relative"><i class="fa-regular fa-bell"></i>
+                              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-red-500">99+</span>
+                              </button>
+
+                              <button class="btn rounded-full bg-red-400 text-white">A</button>
+
+                        </div>
+                  </div>
             </nav>
             <div class="page p-2">
                  <!-- Day One Completed -->
+                 
             </div>
       </div>
-      <script src="./js/index.js"></script>
+      <script type="module" src="./js/index.js"></script>
 </body>
 </html>

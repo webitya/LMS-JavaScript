@@ -19,20 +19,23 @@ togglerBtnNav.onclick=()=>{
 // =====TogglerBtn Coding End Here
 
 // Define Routes
-const routes={
-    "/":`<h1>HomePage Content</h1>`,
-    "/courses":`<h1>HomePage Content Courses</h1>`,
-    "/students":`<h1>HomePage Content Students</h1>`,
-    "/settings":`<h1>HomePage Content Settings</h1>`,
+import dashboard from "../page/dashboard.js";
+import settings from "../page/settings.js";
+import courses from "../page/courses.js";
+import students from "../page/students.js";
+const routes ={
+      "/":dashboard,
+      "/settings":settings,
+      "/courses":courses,
+      "students":students
 }
-const notFound=`<div class="not-found">
-                    <h1>404</h1>
-                    <h2>Oops! the page you are looking doesn't exist</h2>
-                    <img src="../assests/images/webityaweb.svg">
-                    <button class="btn">Go to Homepage</button>
-                 </div>`;
+import notFound from "../page/notFound.js";
 // Handle Route Changes
 const handleRouteChange=()=>{
+      if(window.innerWidth > 700){
+      sideNav.classList.add("active"); 
+      pageContent.classList.add("active");
+      }
       let path=window.location.hash.replace("#","") || "/";
       page.innerHTML=routes[path] || notFound
 }
@@ -57,4 +60,4 @@ window.onhashchange=()=>{
     handleRouteChange()
 }
 // Load the initial Route
-handleRouteChange();
+// handleRouteChange();
